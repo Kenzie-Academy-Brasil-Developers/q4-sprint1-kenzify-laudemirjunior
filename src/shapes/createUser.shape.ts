@@ -1,6 +1,5 @@
 import * as yup from "yup";
 import { v4 } from "uuid";
-import { createPlaylistShape } from "./createPlaylist.shape";
 
 export const createUserShape = yup.object().shape({
   id: yup.string().default(() => v4()),

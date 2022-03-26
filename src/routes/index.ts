@@ -1,14 +1,18 @@
-import { retrieveUsersController } from "./../controller/retrieveUsers.controller";
-import { loginUserController } from "./../controller/loginUser.controller";
-import { createPlaylistController } from "./../controller/createPlaylist.controller";
-import { validateShapeMiddleware } from "../middlewares/validateShape.middleware";
-import { createPlaylistShape } from "./../shapes/createPlaylist.shape";
-import { verifyAuthenticatedUserMiddleware } from "./../middlewares/verifyAuthenticatedUser.middleware";
-import { verifyRequestUserMiddleware } from "./../middlewares/verifyRequestUser.middleware";
 import { Router } from "express";
-import { createUserController } from "./../controller/createUser.controller";
-import { verifyDuplicateUserMiddleware } from "../middlewares/verifyDuplicateUser.middleware";
-import { deleteSongController } from "../controller/deletePlaylist.controller";
+import {
+  createPlaylistController,
+  createUserController,
+  deleteSongController,
+  loginUserController,
+  retrieveUsersController,
+} from "../controller";
+import {
+  validateShapeMiddleware,
+  verifyAuthenticatedUserMiddleware,
+  verifyDuplicateUserMiddleware,
+  verifyRequestUserMiddleware,
+} from "../middlewares";
+import { createPlaylistShape } from "../shapes";
 
 const router = Router();
 

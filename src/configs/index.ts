@@ -2,7 +2,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-export const config: { secret: any; expiresIn: string } = {
+export const config: {
+  secret: any;
+  expiresIn: any;
+} = {
   secret: process.env.SECRET,
-  expiresIn: "1h",
+  expiresIn: process.env.EXPIRESIN,
 };

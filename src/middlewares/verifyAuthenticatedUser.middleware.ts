@@ -1,11 +1,10 @@
 import { data } from "./../services/index";
-import { NewRequest } from "./../@types/request.type";
 import jwt from "jsonwebtoken";
 import { Response, NextFunction } from "express";
 import { config } from "../configs";
 
 export const verifyAuthenticatedUserMiddleware = (
-  req: any,
+  req: Request | any,
   res: Response,
   next: NextFunction
 ) => {

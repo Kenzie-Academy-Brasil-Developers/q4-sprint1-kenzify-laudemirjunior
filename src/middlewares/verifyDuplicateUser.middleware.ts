@@ -1,6 +1,6 @@
 import { data } from "./../services/index";
 import { NextFunction, Request, Response } from "express";
-import { userType } from "../@types/user.type";
+import { userType } from "../types/user.type";
 
 export const verifyDuplicateUserMiddleware = (
   req: Request,

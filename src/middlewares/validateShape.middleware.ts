@@ -1,9 +1,8 @@
-import { NewRequest } from "./../@types/request.type";
-import { NextFunction, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 
 export const validateShapeMiddleware =
   (shape: any) =>
-  async (req: NewRequest, res: Response, next: NextFunction) => {
+  async (req: Request | any, res: Response, next: NextFunction) => {
     try {
       const validated = await shape.validate(req.body, {
         abortEarly: false,

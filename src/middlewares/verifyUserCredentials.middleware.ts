@@ -1,4 +1,4 @@
-import { data } from "./../services/index";
+import { data } from "../services/index";
 import { NextFunction, Request, Response } from "express";
 
 export const verifyUserCredentials = (

@@ -33,6 +33,8 @@ export const createPlaylistController = (req: any, res: Response) => {
       }
     }
 
+    delete user.password;
+
     res.status(200).json(user);
   } else {
     const { artist } = req.query;

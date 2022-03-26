@@ -1,11 +1,10 @@
 import bcrypt from "bcryptjs";
-import { userType } from "./../@types/user.type";
 import { v4 } from "uuid";
 import { data } from "./../services/index";
-import { NewRequest } from "./../@types/request.type";
-import { Response } from "express";
+import { Request, Response } from "express";
+import { userType } from "../types/user.type";
 
-export const createUserController = async (req: NewRequest, res: Response) => {
+export const createUserController = async (req: Request, res: Response) => {
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
   const user: userType = {

@@ -8,5 +8,5 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 exports.config = {
     secret: process.env.SECRET,
-    expiresIn: "1h",
+    expiresIn: process.env.EXPIRESIN,
 };

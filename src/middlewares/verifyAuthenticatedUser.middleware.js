@@ -14,11 +14,11 @@ const verifyAuthenticatedUserMiddleware = (req, res, next) => {
     const token = req.headers.authorization.split(" ")[1];
     jsonwebtoken_1.default.verify(token, configs_1.config.secret, (err, decoded) => {
         if (err) {
-            return res.status(401).json({ message: "invalid token." });
+            return res.status(401).json({ message: "Invalid token" });
         }
-        const user = index_1.data.find((item) => item.username === decoded.username);
-        req.user = user;
-        return next();
+        const userAuthenticated = index_1.data.find((usr) => usr.username === decoded.username);
+        req.userAuthenticated = userAuthenticated;
     });
+    return next();
 };
 exports.verifyAuthenticatedUserMiddleware = verifyAuthenticatedUserMiddleware;
